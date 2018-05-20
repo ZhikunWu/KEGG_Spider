@@ -10,6 +10,15 @@ __email__ = "598466208@qq.com"
 __date__ = "2018.05.18"
 
 def parse_kegg_htext(kegg_htext, out_db):
+    """
+    kegg_htext example:
+    A<b>Metabolism</b>
+    B
+    B  <b>Carbohydrate metabolism</b>
+    C    00010 Glycolysis / Gluconeogenesis [PATH:ko00010]
+    D      K00844  HK; hexokinase [EC:2.7.1.1]
+    D      K12407  GCK; glucokinase [EC:2.7.1.2]
+    """
     ### Create database
     con = sqlite3.connect(out_db)
     cursor = con.cursor()
